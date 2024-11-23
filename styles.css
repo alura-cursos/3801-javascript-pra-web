@@ -5,11 +5,133 @@
 }
 
 :root {
-    --cor-primaria: #F55B64;
-    --cor-secundaria: #C2373F;
-    --neutro: #F9F9F9;
-    --preto: #131730;
+    --cor-primaria: #820AD1; /* Roxo Nubank */
+    --cor-secundaria: #b700ff; /* Rosa Nubank */
+    --neutro: #F9F9F9; /* Branco neutro permanece */
+    --preto: #1C1C1C; /* Preto Nubank */
     --fonte-titulo: "Krona One", sans-serif;
     --fonte-texto: 'Numans', sans-serif;
-    --degrade-azul: linear-gradient(180deg, #000000 0%, #26327F 100%);
+    --degrade-azul: linear-gradient(180deg, #820AD1 0%, #f7f7f7 100%); /* Degradê roxo para rosa */
 }
+
+body{
+    background:var(--degrade-azul);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main{
+    width:50vw;
+    background: var(--neutro);
+    margin-top:4rem;
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    align-items: center;
+    background-color: var(--neutro);
+    padding: 3.5rem;
+    border-radius: 0.5rem;
+}
+.lista{
+    text-align: left;
+    gap:2rem;
+}
+h2{
+    font-family:var(--fonte-titulo);
+    color: var(--cor-primaria);
+    font-size: 1.3rem;
+    text-align: left;
+}
+hr{
+    border:none;
+    border-bottom: 3px dotted var(--cor-primaria);
+    color: var(--cor-primaria);
+    width: 25vw;
+}
+p{
+    margin:1rem;
+    font-family: var(--fonte-texto);
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+}
+form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+}
+#entrada{
+    width:25vw;
+    border:solid var(--preto) 1px;
+    padding: 0.8rem 1rem;
+    border-radius: 1rem;
+}
+
+#entrada::placeholder{
+    font-family: "MountSerrat", sans-serif;
+    font-size: 1rem;
+    line-height: 1.1rem;
+
+}
+.btn{
+    width: 50%;
+    background: var(--cor-secundaria);
+    color: var(--neutro);
+    border:none;
+    border-radius: 1rem;
+    padding: 1rem 0.7rem;
+}
+.item-lista-contaier{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container-nome-compra{
+    display: flex;
+    align-items: center;
+}
+ul{
+    list-style-type: none;
+}
+.item-lista-data{
+    font-size: 0.8rem;
+    line-height: 1rem;
+    width:100%;
+}
+.checkbox-input{
+    display: none;
+}
+.checkbox-customizado{
+    width:1.5rem;
+    height: 1.5rem;
+    background-color: var(--neutro);
+    border: var(--preto) 1px solid;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 8px ;
+}
+.checked{
+    background-color: var(--preto);
+    position: relative;
+}
+/* transforama de relative pra absolute e se movimentar */
+.checked::after{
+    content: "";
+    position: absolute;
+    left: 30%;
+    top: -10%;
+    width: 5px;
+    height: 1rem;
+    border-top: 2px solid var(--neutro);
+    border-left: 2px solid var(--neutro);
+    transform:rotate(-140deg)
+}
+.btn-acao{
+    background:transparent;
+    border:none;
+
+}
+
